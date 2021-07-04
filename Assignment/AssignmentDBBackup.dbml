@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AssignmentDBBackup" Class="AssignmentDBBackupDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\App_Data\AssignmentDBBackup.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AssignmentDBBackupConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Categories" Member="Category_backups">
+    <Type Name="Category_backup">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CategoryName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Publish" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Category_Product_Category" Member="Product_Category_backups" ThisKey="CategoryID" OtherKey="CategoryID" Type="Product_Category_backup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DeliveryCompany" Member="DeliveryCompany_backups">
+    <Type Name="DeliveryCompany_backup">
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyLogo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PricePerKG" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Product_backups">
+    <Type Name="Product_backup">
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductDescription" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ProductQuantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductImage" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalSalesPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="TotalSalesQuantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Publish" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Product_Product_Category" Member="Product_Category_backups" ThisKey="ProductID" OtherKey="ProductID" Type="Product_Category_backup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product_Categories" Member="Product_Category_backups">
+    <Type Name="Product_Category_backup">
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Category_Product_Category" Member="Category_backup" ThisKey="CategoryID" OtherKey="CategoryID" Type="Category_backup" IsForeignKey="true" />
+      <Association Name="Product_Product_Category" Member="Product_backup" ThisKey="ProductID" OtherKey="ProductID" Type="Product_backup" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

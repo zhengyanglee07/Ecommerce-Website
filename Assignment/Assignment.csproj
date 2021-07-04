@@ -1,0 +1,622 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4C33290B-420A-4034-B065-1956A29FCAAA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Assignment</RootNamespace>
+    <AssemblyName>Assignment</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44337</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
+    <DockerLaunchUrl>http://{ServiceIPAddress}</DockerLaunchUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\Downloads\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="AdminLoginDesign.aspx" />
+    <Content Include="Admin\AdminIndex.aspx" />
+    <Content Include="Admin\Category.aspx" />
+    <Content Include="Admin\css\Common.css" />
+    <Content Include="Admin\css\style.css" />
+    <Content Include="Admin\Customer.aspx" />
+    <Content Include="Admin\DeliveryCompany.aspx" />
+    <Content Include="Admin\icons\brand.svg" />
+    <Content Include="Admin\icons\flag.svg" />
+    <Content Include="Admin\icons\free.svg" />
+    <Content Include="Admin\Invoice.aspx" />
+    <Content Include="Admin\js\jquery-3.2.1.min.js" />
+    <Content Include="Admin\js\main.js" />
+    <Content Include="Admin\Order.aspx" />
+    <Content Include="Admin\OrderEdit.aspx" />
+    <Content Include="Admin\Product.aspx" />
+    <Content Include="Admin\ProductAction.aspx" />
+    <Content Include="App_Data\App_Data\AssignmentDB.mdf" />
+    <Content Include="App_Data\App_Data\AssignmentDBBackup.mdf" />
+    <Content Include="App_Data\App_Data\AssignmentDBBackup_log.ldf">
+      <DependentUpon>AssignmentDBBackup.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\App_Data\AssignmentDB_log.ldf">
+      <DependentUpon>AssignmentDB.mdf</DependentUpon>
+    </Content>
+    <Content Include="bin\Assignment.dll" />
+    <Content Include="bin\Assignment.pdb" />
+    <Content Include="Contact.aspx" />
+    <Content Include="css\RegLog.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\StyleSheet1.css" />
+    <Content Include="images\Admin\avatar.png" />
+    <Content Include="images\Admin\Icons\close.png" />
+    <Content Include="images\Admin\Icons\edit %281%29.png" />
+    <Content Include="images\Admin\Icons\edit.png" />
+    <Content Include="images\Admin\Login\1 ppl.jpg" />
+    <Content Include="images\Admin\Login\2 ppl.jpg" />
+    <Content Include="images\Admin\Login\3 ppl.jpg" />
+    <Content Include="images\Admin\Login\4 ppl.jpg" />
+    <Content Include="images\Admin\Login\adminbee.jpg" />
+    <Content Include="images\Admin\Login\Bckgrdimg.jpg" />
+    <Content Include="images\Admin\Login\bee-laptop-decal.jpg" />
+    <Content Include="images\Admin\Login\error.png" />
+    <Content Include="images\Admin\Login\hive-lookups-udf.png" />
+    <Content Include="images\Admin\Login\shopbeeGIF.gif" />
+    <Content Include="images\Admin\Login\shoppingcart.jpg" />
+    <Content Include="images\Admin\Login\signin-image.jpg" />
+    <Content Include="images\Admin\Login\signup-image.jpg" />
+    <Content Include="images\Admin\NoImage.png" />
+    <Content Include="images\Asc.png" />
+    <Content Include="images\Desc.png" />
+    <Content Include="images\Electronic Goods.jpg" />
+    <Content Include="images\Health.jpg" />
+    <Content Include="images\Product_Images\309fbabb-c73f-41c3-a61f-bb72cf43fddbtv5.1.JPG" />
+    <Content Include="images\Product_Images\3fa66afd-0510-4acd-813f-540d3a0f70f2goods_67_422995.jpg" />
+    <Content Include="images\Product_Images\96be350c-3dc7-4e6a-98c8-3100384223b6goods_69_427062.jpg" />
+    <Content Include="images\sporting-goods.jpg" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Member\Delivery.aspx" />
+    <Content Include="fonts\material-icon\css\material-design-iconic-font.css" />
+    <Content Include="fonts\material-icon\css\material-design-iconic-font.min.css" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.svg" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.svg" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.svg" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.svg" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.svg" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.svg" />
+    <Content Include="Member\GeneratingReceipt.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="images\0254-gdexpress.png" />
+    <Content Include="images\238-2384957_click-here-find-out-more-button.png" />
+    <Content Include="images\25415-6-add-to-cart-button-hd.png" />
+    <Content Include="images\background.jpg" />
+    <Content Include="images\contact-us-email-icon-clipart-computer-icons-email-email-subscribe-icon-png.png" />
+    <Content Include="images\contact-us-phone-icon-clipart.png" />
+    <Content Include="images\exposion-effect.png" />
+    <Content Include="images\Feedback-icon-715x715.png" />
+    <Content Include="images\logo-opener.png" />
+    <Content Include="images\mastercard.png" />
+    <Content Include="images\Maybank-Logo.png" />
+    <Content Include="images\more-details-button-icon-computer-generated-web-pure-white-background-119140842.jpg" />
+    <Content Include="images\Payment Mastercard.png" />
+    <Content Include="images\paypal-vector-logo.png" />
+    <Content Include="images\pos-malaysia-logo-vector.png" />
+    <Content Include="images\ProductShowPiece.jpg" />
+    <Content Include="images\showing images.jpeg" />
+    <Content Include="images\showingProduct3.0.jpg" />
+    <Content Include="images\showingProductPlatform.jpg" />
+    <Content Include="images\showingProductPlatform2.0.jpg" />
+    <Content Include="images\showing_images_780x353.jpeg" />
+    <Content Include="images\vaccum.png" />
+    <Content Include="images\VISA payment.jpg" />
+    <Content Include="javascript\JavaScript.js" />
+    <Content Include="javascript\utils.js" />
+    <Content Include="LoginDesign.aspx" />
+    <Content Include="Member\images\0254-gdexpress.png" />
+    <Content Include="Member\images\238-2384957_click-here-find-out-more-button.png" />
+    <Content Include="Member\images\25415-6-add-to-cart-button-hd.png" />
+    <Content Include="Member\images\background.jpg" />
+    <Content Include="Member\images\contact-us-email-icon-clipart-computer-icons-email-email-subscribe-icon-png.png" />
+    <Content Include="Member\images\contact-us-phone-icon-clipart.png" />
+    <Content Include="Member\images\Electronic Goods.jpg" />
+    <Content Include="Member\images\exposion-effect.png" />
+    <Content Include="Member\images\Feedback-icon-715x715.png" />
+    <Content Include="Member\images\Health.jpg" />
+    <Content Include="Member\images\logo-opener.png" />
+    <Content Include="Member\images\mastercard.png" />
+    <Content Include="Member\images\Maybank-Logo.png" />
+    <Content Include="Member\images\more-details-button-icon-computer-generated-web-pure-white-background-119140842.jpg" />
+    <Content Include="Member\images\Payment Mastercard.png" />
+    <Content Include="Member\images\paypal-vector-logo.png" />
+    <Content Include="Member\images\pos-malaysia-logo-vector.png" />
+    <Content Include="Member\images\ProductShowPiece.jpg" />
+    <Content Include="Member\images\showing images.jpeg" />
+    <Content Include="Member\images\showingProduct3.0.jpg" />
+    <Content Include="Member\images\showingProductPlatform.jpg" />
+    <Content Include="Member\images\showingProductPlatform2.0.jpg" />
+    <Content Include="Member\images\showing_images_780x353.jpeg" />
+    <Content Include="Member\images\sporting-goods.jpg" />
+    <Content Include="Member\images\vaccum.png" />
+    <Content Include="Member\images\VISA payment.jpg" />
+    <Content Include="Member\Payment.aspx" />
+    <Content Include="Member\Paysuccessful.aspx" />
+    <Content Include="Member\Product Testing Page.aspx" />
+    <Content Include="Member\ProductDetail.aspx" />
+    <Content Include="obj\Debug\Assignment.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Assignment.dll" />
+    <Content Include="obj\Debug\Assignment.pdb" />
+    <Content Include="obj\Debug\TempPE\Admin.AssignmentDB1.designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\AssignmentDB.designer.cs.dll" />
+    <Content Include="ProductList Testing.aspx" />
+    <Content Include="Member\Receipt.aspx" />
+    <Content Include="RegisterDesignFacebook.aspx" />
+    <Content Include="Member\ShoppingCart.aspx" />
+    <Content Include="testing.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLoginDesign.aspx.cs">
+      <DependentUpon>AdminLoginDesign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLoginDesign.aspx.designer.cs">
+      <DependentUpon>AdminLoginDesign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminIndex.aspx.cs">
+      <DependentUpon>AdminIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminIndex.aspx.designer.cs">
+      <DependentUpon>AdminIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Customer.aspx.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Customer.aspx.designer.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeliveryCompany.aspx.cs">
+      <DependentUpon>DeliveryCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeliveryCompany.aspx.designer.cs">
+      <DependentUpon>DeliveryCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FileUpload.ashx.cs">
+      <DependentUpon>FileUpload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Invoice.aspx.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Invoice.aspx.designer.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderEdit.aspx.cs">
+      <DependentUpon>OrderEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderEdit.aspx.designer.cs">
+      <DependentUpon>OrderEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ProductAction.aspx.cs">
+      <DependentUpon>ProductAction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ProductAction.aspx.designer.cs">
+      <DependentUpon>ProductAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AssignmentDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssignmentDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="AssignmentDBBackup.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssignmentDBBackup.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Delivery.aspx.cs">
+      <DependentUpon>Delivery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Delivery.aspx.designer.cs">
+      <DependentUpon>Delivery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\GeneratingReceipt.aspx.cs">
+      <DependentUpon>GeneratingReceipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\GeneratingReceipt.aspx.designer.cs">
+      <DependentUpon>GeneratingReceipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Googlev2.cs" />
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDesign.aspx.cs">
+      <DependentUpon>LoginDesign.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginDesign.aspx.designer.cs">
+      <DependentUpon>LoginDesign.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Paysuccessful.aspx.cs">
+      <DependentUpon>Paysuccessful.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Paysuccessful.aspx.designer.cs">
+      <DependentUpon>Paysuccessful.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Product Testing Page.aspx.cs">
+      <DependentUpon>Product Testing Page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Product Testing Page.aspx.designer.cs">
+      <DependentUpon>Product Testing Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="ProductList Testing.aspx.cs">
+      <DependentUpon>ProductList Testing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductList Testing.aspx.designer.cs">
+      <DependentUpon>ProductList Testing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Member\Receipt.aspx.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Receipt.aspx.designer.cs">
+      <DependentUpon>Receipt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterDesignFacebook.aspx.cs">
+      <DependentUpon>RegisterDesignFacebook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterDesignFacebook.aspx.designer.cs">
+      <DependentUpon>RegisterDesignFacebook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Security.cs" />
+    <Compile Include="Member\ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="testing.aspx.cs">
+      <DependentUpon>testing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testing.aspx.designer.cs">
+      <DependentUpon>testing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AssignmentDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>AssignmentDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Admin\Admin.Master" />
+    <Content Include="Admin\FileUpload.ashx" />
+    <None Include="AssignmentDB.dbml.layout">
+      <DependentUpon>AssignmentDB.dbml</DependentUpon>
+    </None>
+    <Content Include="css\style.css.map" />
+    <Content Include="AssignmentDBBackup.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>AssignmentDBBackup.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="AssignmentDBBackup.dbml.layout">
+      <DependentUpon>AssignmentDBBackup.dbml</DependentUpon>
+    </None>
+    <None Include="Dockerfile" />
+    <None Include=".dockerignore">
+      <DependentUpon>Dockerfile</DependentUpon>
+    </None>
+    <Content Include="Member\Web.config" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="fonts\material-icon\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-300italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-500italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-600.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-700italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-800italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-900.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-italic.woff2" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.eot" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.ttf" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.woff" />
+    <Content Include="fonts\poppins\poppins-v5-latin-regular.woff2" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.eot" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.ttf" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.woff" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700.woff2" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.eot" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.ttf" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.woff" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-700italic.woff2" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.eot" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.ttf" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.woff" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-italic.woff2" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.eot" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.ttf" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.woff" />
+    <Content Include="fonts\poppins\roboto-condensed-v16-latin-regular.woff2" />
+    <Content Include="obj\Container\ContainerCreationResult.cache" />
+    <Content Include="obj\Container\ContainerDevelopmentMode.cache" />
+    <Content Include="obj\Container\ContainerId.cache" />
+    <Content Include="obj\Container\ContainerName.cache" />
+    <Content Include="obj\Container\ContainerOperatingSystemFlavor.cache" />
+    <Content Include="obj\Container\ContainerRunContext.cache" />
+    <Content Include="obj\Container\ExtendCompilerIdleTime.cache" />
+    <Content Include="obj\Container\OperatingSystemName.cache" />
+    <Content Include="obj\Container\TargetFramework.cache" />
+    <Content Include="obj\Debug\Assignment.csproj.CopyComplete" />
+    <Content Include="obj\Debug\Assignment.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\Assignment.csprojAssemblyReference.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Account\" />
+    <Folder Include="Admin\pdf\" />
+    <Folder Include="images\Delivery_Company\" />
+    <Folder Include="obj\Container\empty\" />
+    <Folder Include="obj\Docker\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57865</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44337/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.1.10.9\build\Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

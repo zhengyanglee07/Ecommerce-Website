@@ -1,0 +1,26 @@
+﻿body, table, input, select {
+    font: 11pt Calibri;
+}
+
+.error {
+    color: red;
+    background-image: url(../images/error.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 20px;
+}
+
+body {
+    background-image: url('../images/Bckgrdimg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#footer {
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}

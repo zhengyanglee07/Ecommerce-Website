@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Assignment.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/StyleSheet1.css" rel="stylesheet" type="text/css" />
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="css/StyleSheet1.css" rel="stylesheet" type="text/css" />
+
+    <!-- Recaptcha api -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav>
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+            <a href="Home.aspx" style="margin-right: 600px;">ShopBee</a>
+            <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Font-Size="X-Large" Orientation="Horizontal" StaticDisplayLevels="2" StaticSubMenuIndent="0px" BorderColor="#C3A141" ClientIDMode="Static" CssClass="ddl">
+                <DynamicHoverStyle Font-Bold="True" Font-Size="X-Large" BorderStyle="None" BackColor="#C3A141" />
+                <DynamicMenuItemStyle HorizontalPadding="25px" VerticalPadding="15px" ItemSpacing="5px" BorderStyle="Solid" BorderColor="#C3A141" CssClass="ddl" />
+                <DynamicSelectedStyle Font-Italic="True" Font-Bold="True" BorderStyle="Solid" BackColor="#FFCC00" />
+                <StaticHoverStyle Font-Bold="True" Font-Size="X-Large" BorderStyle="None" BackColor="#C3A141" />
+                <StaticMenuItemStyle BorderWidth="0px" HorizontalPadding="25px" VerticalPadding="15px" ItemSpacing="5px" BorderStyle="Solid" BorderColor="#C3A141" />
+                <StaticMenuStyle HorizontalPadding="25px" VerticalPadding="25px" />
+            </asp:Menu>
+        </nav>
+
+        <div class="content">
+            <asp:ContentPlaceHolder ID="main" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+
+        <div class="footer">
+
+            <div class="footer-logistics">
+                <div>LOGISTICS</div>
+                <img src="../images/pos-malaysia-logo-vector.png" />
+                <img src="../images/0254-gdexpress.png" />
+                <img src="../images/logo-opener.png" />
+            </div>
+
+            <div class="footer-payment">
+                <div>PAYMENT</div>
+                <img src="../images/mastercard.png" />
+                <img src="../images/Maybank-Logo.png" />
+                <img src="../images/paypal-vector-logo.png" />
+            </div>
+
+            <div class="footer-contactus">
+                <div>CONTACT US</div>
+                <div style="margin-top: 20px;">
+                    <img src="../images/contact-us-phone-icon-clipart.png" />
+                    <p style="display: inline-block; transform: translateY(-15px); margin-left: 20px;">011-98755412</p>
+                </div>
+                <div style="margin-top: 20px;">
+                    <img src="../images/contact-us-email-icon-clipart-computer-icons-email-email-subscribe-icon-png.png" />
+                    <p style="display: inline-block; transform: translateY(-15px); margin-left: 20px;">shopbee1798@gmail.com</p>
+                </div>
+                <div style="margin-top: 20px;">
+                    <img src="../images/Feedback-icon-715x715.png" />
+                    <a href="Contact.aspx" style="display: inline-block; transform: translateY(-15px); margin-left: 20px; cursor: pointer;">Feedback</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footerLine2-container">
+        </div>
+    </form>
+    <hr class="footerLine2" />
+    <p style="margin-left: 5%; margin-top: 20px;">&copy ShopBee.All Rights Reserved</p>
+</body>
+</html>

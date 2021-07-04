@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Assignment.Admin.Admin" %>
+
+<!doctype html>
+<html lang="en">
+<head runat="server">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CoreUI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+
+    <!--CSS for COREUI icon-->
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/free.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/icons@2.0.0-beta.3/css/brand.min.css">
+
+
+    <title>Shobee Admin</title>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body class="c-app">
+    <form id="form1" method="post" runat="server">
+        <!-- Sidebar -->
+        <div class="c-sidebar c-sidebar-fixed c-sidebar-lg-show c-sidebar-light" style="background: linear-gradient(to bottom, #ffff00 18%, #cc6600 124%); font-weight:bold" id="sidebar">
+            <div class="c-sidebar-brand d-lg-down-none text-center" style="background-color:black">
+                SHOBEE
+            </div>
+            <ul class="c-sidebar-nav ps ps--active-y" style="">
+                <li class="c-sidebar-nav-item">
+                    <a class="c-sidebar-nav-link c-sidebar-nav-link-warning" href="AdminIndex.aspx">
+                        <svg class="c-sidebar-nav-icon">
+                            <use xlink:href="icons/free.svg#cil-speedometer"></use>
+                        </svg>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+                    <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle c-sidebar-nav-link-warning" href="#">
+                        <svg class="c-sidebar-nav-icon">
+                            <use xlink:href="icons/free.svg#cil-storage"></use>
+                        </svg>
+                        Inventory
+                    </a>
+                    <ul class="c-sidebar-nav-dropdown-items">
+                        <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link c-sidebar-nav-link-warning" href="Product.aspx"><span class="c-sidebar-nav-icon"></span>Product</a></li>
+                        <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link c-sidebar-nav-link-warning" href="Category.aspx"><span class="c-sidebar-nav-icon"></span>Category</a></li>
+                    </ul>
+                </li>
+                <li class="c-sidebar-nav-item">
+                    <a class="c-sidebar-nav-link c-sidebar-nav-link-warning c-sidebar-nav-link-warning" href="Order.aspx">
+                        <svg class="c-sidebar-nav-icon">
+                            <use xlink:href="icons/free.svg#cil-description"></use>
+                        </svg>
+                        Order
+                    </a>
+                </li>
+                <li class="c-sidebar-nav-item">
+                    <a class="c-sidebar-nav-link c-sidebar-nav-link-warning" href="DeliveryCompany.aspx">
+                        <svg class="c-sidebar-nav-icon">
+                            <use xlink:href="icons/free.svg#cil-truck"></use>
+                        </svg>
+                        Delivery
+                    </a>
+                </li>
+                <li class="c-sidebar-nav-item">
+                    <a class="c-sidebar-nav-link c-sidebar-nav-link-warning" href="Customer.aspx">
+                        <svg class="c-sidebar-nav-icon">
+                            <use xlink:href="icons/free.svg#cil-people"></use>
+                        </svg>
+                        Customer
+                    </a>
+                </li>
+            </ul>
+            <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
+        </div>
+
+        <div class="c-wrapper c-fixed-components">
+            <!-- Header -->
+            <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
+                <button class="c-header-toggler c-class-toggler d-lg-none mfe-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show">
+                    <svg class="c-icon c-icon-lg">
+                        <use xlink:href="icons/free.svg#cil-menu"></use>
+                    </svg>
+                </button>
+                <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar" data-class="c-sidebar-lg-show" responsive="true">
+                    <svg class="c-icon c-icon-lg">
+                        <use xlink:href="icons/free.svg#cil-menu"></use>
+                    </svg>
+                </button>
+<%--               <ul class="c-header-nav d-md-down-none" style="padding-top: 5px">
+                    <asp:sitemapdatasource id="sitemapdatasource1" runat="server" />
+                    <asp:menu id="menu1" staticdisplaylevels="2" orientation="horizontal" runat="server" datasourceid="sitemapdatasource1" backcolor="#f7f6f3" dynamichorizontaloffset="2" font-names="verdana" font-size="1.2em" forecolor="#7c6f57" staticsubmenuindent="10px">
+                        <dynamichoverstyle font-bold="true" />
+                        <dynamicmenuitemstyle horizontalpadding="5px" verticalpadding="2px" />
+                        <dynamicmenustyle />
+                        <dynamicselectedstyle />
+                        <statichoverstyle font-bold="true" />
+                        <staticmenuitemstyle backcolor="white" horizontalpadding="5px" verticalpadding="2px" />
+                        <staticselectedstyle />
+                    </asp:menu>
+                </ul>--%>
+                <ul class="c-header-nav ml-auto mr-4">
+                    <li class="c-header-nav-item dropdown"><a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <div class="c-avatar">
+                            <img class="c-avatar-img" src="../Images/Admin/avatar.png" alt="Admin Avatar">
+                        </div>
+                    </a>
+                        <div class="dropdown-menu dropdown-menu-right pt-0">
+                            <div class="dropdown-header bg-light py-2"><strong>Account</strong></div>
+                            <a class="dropdown-item" href="../AdminLoginDesign.aspx">
+                                <svg class="c-icon mr-2">
+                                    <use xlink:href="icons/free.svg#cil-account-logout"></use>
+                                </svg>
+                                Logout</a>
+                        </div>
+                    </li>
+                </ul>
+                <div style="visibility: hidden; width: 100%; overflow: hidden; font-size: 3px; padding: 0; margin: 0">
+                    MakeITFullScreen!!!MakeITFullScreen!!!MakeITFullScreen!!!MakeITFullScreen!!!MakeITFullScreen!!!
+                    MakeITFullScreen!!!MakeITFullScreen!!!MakeITFullScreen!!!MakeITFullScreen!!!MakeITFullScreen!!!
+                </div>
+
+            </header>
+
+            <div style="padding-left: 10px; padding-right: 10px;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+            <!-- Footer -->
+            <footer class="c-footer">
+                 &copy; 2021 ShopBee SDN BHD. ALL RIGHT RESERVED
+            </footer>
+        </div>
+    </form>
+    <!-- Popper.js first, then CoreUI JS -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.bundle.js"></script>
+    <script src="https://unpkg.com/@coreui/chartjs/dist/js/coreui-chartjs.bundle.js"></script>
+    <script src="https://unpkg.com/@coreui/utils/dist/coreui-utils.js"></script>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
+

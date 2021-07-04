@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.25, 8.5" name="AssignmentDBBackup">
+  <DataContextMoniker Name="/AssignmentDBBackupDataContext" />
+  <nestedChildShapes>
+    <classShape Id="004ffb03-ca86-4349-b5db-90dad99a393e" absoluteBounds="4.875, 1.125, 2, 1.3525109863281251">
+      <DataClassMoniker Name="/AssignmentDBBackupDataContext/Category_backup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d98df59a-d7db-42a7-ba1f-491f1514a6ad" absoluteBounds="4.89, 1.585, 1.9700000000000002, 0.792510986328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e69a8f25-4a43-4f53-939f-5368100775a9" absoluteBounds="5.625, 2.75, 2, 1.7220992024739581">
+      <DataClassMoniker Name="/AssignmentDBBackupDataContext/DeliveryCompany_backup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8ee10883-edf2-4627-b0ff-7601a74877bb" absoluteBounds="5.6400000000000006, 3.21, 1.9700000000000002, 1.1620992024739583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ac8a419c-2bb9-4e9c-bb69-50adb0ccc07c" absoluteBounds="11, 1.375, 2, 2.4612756347656251">
+      <DataClassMoniker Name="/AssignmentDBBackupDataContext/Product_backup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56d38c7c-e697-4c32-b70c-3d525cf54859" absoluteBounds="11.015, 1.835, 1.9700000000000002, 1.901275634765625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e1cef153-c2e1-442a-bda5-8985f413c681" absoluteBounds="8.75, 1.75, 2, 1.1677168782552083">
+      <DataClassMoniker Name="/AssignmentDBBackupDataContext/Product_Category_backup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a78cf3e7-ceff-4ce4-88f9-ca978940f7b1" absoluteBounds="8.765, 2.21, 1.9700000000000002, 0.60771687825520826" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.875 : 2.11375549316406); (8.75 : 2.11375549316406)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AssignmentDBBackupDataContext/Category_backup/Category_Product_Category" />
+      <nodes>
+        <classShapeMoniker Id="004ffb03-ca86-4349-b5db-90dad99a393e" />
+        <classShapeMoniker Id="e1cef153-c2e1-442a-bda5-8985f413c681" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11 : 2.3338584391276); (10.75 : 2.3338584391276)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AssignmentDBBackupDataContext/Product_backup/Product_Product_Category" />
+      <nodes>
+        <classShapeMoniker Id="ac8a419c-2bb9-4e9c-bb69-50adb0ccc07c" />
+        <classShapeMoniker Id="e1cef153-c2e1-442a-bda5-8985f413c681" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
